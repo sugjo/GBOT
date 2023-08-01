@@ -5,10 +5,10 @@
   "author": "Horus Lugo",
   "license": "MIT",
   "scripts": {
-    "dev": "tsnd --respawn --files -r @babel/register --inspect -- src/index.ts",
+    "dev": "tsnd --respawn --files -r @babel/register --inspect -- src/app/index.ts",
     "build": "babel ./src -d ./dist --extensions .ts --copy-files",
     "typecheck": "tsc",
-    "start": "node dist/index.js",
+    "start": "node dist/app/index.js",
     "lint:base": "eslint --ext .js,.json,.ts",
     "lint": "yarn lint:base src",
     "prepare": "simple-pre-commit"
@@ -19,6 +19,9 @@
       "yarn lint:base --fix"
     ]
   },
+  "_moduleAliases": {
+    "@": "./src"
+  },
   "devDependencies": {
     "@babel/cli": "^7.22.9",
     "@babel/core": "^7.22.9",
@@ -27,6 +30,7 @@
     "@babel/preset-typescript": "^7.22.5",
     "@babel/register": "^7.22.5",
     "@types/libsodium-wrappers": "^0",
+    "@types/module-alias": "^2.0.1",
     "@types/node": "^20.4.4",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
@@ -53,6 +57,7 @@
     "discord.js": "^14.11.0",
     "dotenv": "^16.3.1",
     "libsodium-wrappers": "^0.7.11",
+    "module-alias": "^2.2.3",
     "play-dl": "^1.9.6"
   }
 }

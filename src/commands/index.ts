@@ -1,8 +1,7 @@
-import { CommandFile } from "../types";
-import { commandInit } from "../utils/commandInit";
-import ping from "./ping";
-import play from "./play";
+import { SlashCommandFile } from "@/shared/types";
 
-export const commandFiles:CommandFile[] = [ping, play];
+import { musicCommands } from "./Player";
 
-commandInit(commandFiles);
+export const SlashCommands: SlashCommandFile[] = [
+	...musicCommands
+];

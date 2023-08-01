@@ -1,9 +1,9 @@
 import { REST, RESTPostAPIChatInputApplicationCommandsJSONBody, Routes } from "discord.js";
 import dotenv from "dotenv";
 
-import { CommandFile } from "../types";
+import { SlashCommandFile } from "@/shared/types";
 
-export async function commandInit(commandFiles: CommandFile[]) {
+export async function reloadSlashCommand(commandFiles: SlashCommandFile[]) {
 	dotenv.config();
 
 	if (!process.env.DC_TOKEN) {
