@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsnd --respawn --files -r @babel/register --inspect -- src/app/index.ts",
-    "build": "babel ./src -d ./dist --extensions .ts --copy-files",
+    "build": "babel ./src -d ./dist --extensions .ts --copy-files && tsc-alias -p tsconfig.json",
     "typecheck": "tsc",
     "start": "node dist/app/index.js",
     "lint:base": "eslint --ext .js,.json,.ts",
@@ -42,6 +42,7 @@
     "lint-staged": "^13.2.3",
     "simple-pre-commit": "^1.2.1",
     "ts-node-dev": "^2.0.0",
+    "tsc-alias": "^1.8.7",
     "typescript": "^5.1.6"
   },
   "engines": {
